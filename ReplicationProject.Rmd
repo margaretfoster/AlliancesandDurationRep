@@ -1,0 +1,40 @@
+---
+title: "Replication Summary Data"
+output: html_document
+date: "January 2015"
+header-includes:
+
+https://sites.google.com/site/brianjphillips/TGcooperationISQ.dta?attredirects=0
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r, message=FALSE} 
+#(message=FALSE doesn't display message from package)
+# ``` creates r-script, returns # to comment
+# Start with a clean workspace
+rm(list=ls())
+
+# Load libraries
+#install.packages('apsrtable')
+#install.packages('arm')
+library(foreign)
+library(xtable)
+library(apsrtable)
+library(arm)
+library(ggplot2)
+
+# Relevant paths
+basePath='/Users/Huginn/Documents/Classes/MLE/Replication/'
+lab1Path='~/Documents/Classes/MLE/Replication' #saves path as an object in R
+lab1Path=file.path('~','Documents', 'Class', 'MLE', 'Replication')
+
+#try to use foreign to import:
+bpn= read.dta('/Users/Huginn/Documents/Classes/MLE/Replication/PhillipsForStata10.dta', convert.dates = TRUE, convert.factors = TRUE,missing.type = FALSE,convert.underscore = FALSE, warn.missing.labels = TRUE)
+save(bpn, file='bpn.Rda')
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

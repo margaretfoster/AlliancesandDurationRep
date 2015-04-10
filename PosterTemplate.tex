@@ -1,0 +1,263 @@
+\documentclass[landscape,paperheight=24in,fontscale=.45,paperwidth=36in,landscape,final]{baposter}
+
+\usepackage{times}
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{pgfbaselayers}
+\usepackage{subfigure}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+% \usepackage{helvet}
+% %\usepackage{bookman}
+% \usepackage{palatino}
+
+\usepackage[T1]{fontenc}
+\usepackage{ae}
+
+% \newcommand{\captionfont}{\footnotesize}
+
+\selectcolormodel{rgb}
+
+\graphicspath{{images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multicol Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\columnsep}{0.7em}
+\setlength{\columnseprule}{0mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save space in lists. Use this after the opening of the list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{1pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}
+
+
+
+
+\definecolor{silver}{cmyk}{0,0,0,0.3}
+\definecolor{yellow}{cmyk}{0,0,0.9,0.0}
+\definecolor{reddishyellow}{cmyk}{0,0.22,1.0,0.0}
+\definecolor{black}{cmyk}{0,0,0.0,1.0}
+\definecolor{darkYellow}{cmyk}{0,0,1.0,0.5}
+\definecolor{darkSilver}{cmyk}{0,0,0,0.1}
+
+\definecolor{lightyellow}{cmyk}{0,0,0.3,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lightestyellow}{cmyk}{0,0,0.05,0.0}
+
+\definecolor{lightblues}{rgb}{.867, .918, .965}
+\definecolor{mediumblues}{rgb}{.617, .789, .879}
+\definecolor{darkblues}{rgb}{.191, .508, .738}
+
+\definecolor{ColorBrew1}{rgb}{166, 97, 26}
+\definecolor{ColorBrew2}{rgb}{223, 194, 125}
+\definecolor{ColorBrew3}{rgb}{245, 245, 245}
+\definecolor{ColorBrew4}{rgb}{128, 205, 193}
+\definecolor{ColorBrew5}{rgb}{1, 133, 113}
+
+\definecolor{textborder}{rgb}{0,0,156}
+\definecolor{textheaderdark}{rgb}{0,0,156}
+\definecolor{textheaderlight}{rgb}{0,0,156}
+
+\definecolor{DukeBlue}{HTML}{001A57}
+\definecolor{LBlue}{HTML}{336699}
+\definecolor{Teal}{HTML}{018571}
+%\definecolor{DukeBlue}{rgb}{0,0,.6}
+%\definecolor{DukeBlue}{rgb}{0,0,.611764706}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Here starts the poster
+%%%---------------------------------------------------------------------------
+%%% Format it to your taste with the options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\typeout{Poster Starts}
+\background{}
+
+\begin{poster}{
+  % Show grid to help with alignment
+  grid=false,
+  columns=4,
+  % Column spacing
+  colspacing=1em,
+  % Color style
+  bgColorOne=white, %specified the background color of the entire chart
+  bgColorTwo=black, % not sure what this does
+  borderColor=Teal,  % border color of boxes on poster
+  headerColorOne=Teal,  % color of header
+  headerColorTwo=black,  % not sure what this does
+  headerFontColor=white, % color of font
+  boxColorOne=white,
+  boxColorTwo=white,
+  % Format of textbox
+  textborder=rounded,
+  % Format of text header
+  eyecatcher=true,
+  headerborder=open,
+  headerheight=0.08\textheight,
+  headershape=roundedright,
+  headershade=plain,
+  headerfont=\large\textsc, %Sans Serif
+  boxshade=plain,
+%  background=shade-tb,
+  background=plain,
+  linewidth=2pt
+  }
+{
+Eye Catcher, empty if option eyecatcher=no
+}
+{
+\textcolor{Teal}{It's Who You Know}\\ \LARGE
+\textcolor{Teal}{Replicating and Extending Philips (2012)}
+}
+{
+\textcolor{LBlue}{Margaret J. Foster- mjf34@duke.edu}
+}
+  % University logo
+  {{\begin{minipage}{13em}
+    \hfill
+    \includegraphics[height=5.5em]{logo_horizontal_300dpi.jpg}
+  \end{minipage}}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Original Paper: Phillips (2012)}{name=introduction,column=0,row=0,span=1}
+{
+% %\section*{Source}
+% %
+\subsection*{Main Questions}
+\begin{enumerate}
+\item ...
+\item ...
+\end{enumerate}
+\vspace{-2mm}
+...
+\vspace{-2mm}
+\subsection*{Findings}
+....
+}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\headerbox{Alternate Model Specification}{name=data,column=0,below=introduction,span=1}
+{
+..
+\vspace{-3mm}
+\subsection*{Problem}
+...
+\vspace{-9mm}
+\begin{center}
+\begin{tabular}{l}
+ \\ [2.0ex]
+\includegraphics[height=68mm,width=68mm]{ROC.pdf}
+\end{tabular}
+\end{center}
+\vspace{-11mm} 
+\subsection*{Solution}
+...
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\headerbox{Revised Point Estimates}
+{name=results,column=1,span=1}
+{
+As this coefficient plot shows, introducing an alternative selection equation for MIDs does not greatly alter the point estimates for the religion/state dyad types for the outcome of interest, Severe Dispute.
+\vspace{-9mm}
+\begin{center}
+\begin{tabular}{l}
+ \\ [2.0ex]
+\includegraphics[height=85mm,width=85mm]{CoefPlot.pdf}
+\end{tabular}
+\end{center}
+\vspace{-4mm}
+However, with fewer variables in the selection model, we can be \emph{more confident} in the robustness of the results of the outcome equation.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Predicted Probabilities by Dyad Type}
+{name=dyads,column=2,span=2}
+{
+The plots below show the predicted probability of a severe dispute as time since a previous MID increases. Religion/state dyad types are plotted individually, holding all other variables at their mean, median, or at zero (dummies for other dyad types). 
+\begin{center}
+\begin{tabular}{lcc}
+\includegraphics[height=93mm,width=165mm]{PredProbsLong.pdf}
+\end{tabular}
+\end{center}
+\vspace{-3mm}
+Dyads with religious and non-religious pairings (high ideological distance) start with higher probabilities of severity and do not decrease as much over time as ideologically-similar pairings. However, there is high uncertainty.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\headerbox{Predictive Accuracy of the Model}
+{name=sepplots,column=1,row=0,span=2,below=dyads}
+{
+In the separation plots below, predicted probabilities of severe disputes are ordered from low (far left) to high (far right), with actual severe disputes (1) represented in dark blue and non-events (0) represented in light brown. Ideally, all blue lines should be clustered on the right, \emph{separated} from non-events on the left. A trace line corresponds to the predicted probability values over observations. 
+\vspace{-3mm}
+\begin{center}
+\includegraphics[height=40mm,width=140mm]{SepPlotAll.pdf}\\
+\end{center}
+\vspace{-12mm}
+\begin{center}
+\begin{tabular}{lcc}
+\includegraphics[height=25mm,width=90mm]{SepPlot1.pdf}&\includegraphics[height=25mm,width=90mm]{SepPlot2.pdf}\\
+\includegraphics[height=25mm,width=90mm]{SepPlot3.pdf}&\includegraphics[height=25mm,width=90mm]{SepPlot4.pdf}\\
+\vspace{-10mm}
+\end{tabular}
+\end{center}
+\vspace{-3mm}
+The overall alternate model performs fairly well in-sample. A four-fold cross-validation reveals consistent out-of-sample performance. The plots also show, though, that the model tends to over-predict the outcome.
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Conclusions}
+{name=conclusion,column=3,row=1,span=1,below=dyads}
+{
+Henne's work does pick up on an \textbf{apparent effect of religion-state relations on dispute severity}, but the finding is \textbf{overshadowed by issues of uncertainty.} Within the coefficient plot, a 95 percent confidence interval includes zero for five out of six religion/state dyad types. The predicted probabilities of severe disputes plotted for the different dyad types show that coefficients within a reasonable range could yield wildly different results. As evidenced by separation plots, the model can predict severe disputes relatively well, but it consistently overestimates.
+\vspace{-2mm}
+\subsection*{Bottom Line}
+\vspace{-1mm}
+Any theoretical or practical claims based on these results should be made with caution, but religion could be a viable variable of interest in international relations.
+\vspace{-2mm}
+\subsection*{Moving Forward}
+\vspace{-2mm}
+\begin{itemize}
+\item Develop a theoretically robust and structurally-distinct selection equation to truly avoid correlated errors and misuse of selection methods.
+\item Expand to other interstate interactions (trade, treaties, etc.) and religion's salience at different levels (beyond institutionalization, such as within public opinion, media, etc.) of national society.
+\end{itemize}
+}
+
+
+
+\end{poster}
+\end{document}

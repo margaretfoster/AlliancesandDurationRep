@@ -1,0 +1,270 @@
+\documentclass[paperwidth = 42in, paperheight = 36in, landscape,final]{baposter}
+
+\usepackage{times}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{tikz}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{subfig}
+
+\usepackage{pgfbaselayers}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+% \usepackage{helvet}
+% %\usepackage{bookman}
+% \usepackage{palatino}
+
+\usepackage[T1]{fontenc}
+\usepackage{ae}
+
+% \newcommand{\captionfont}{\footnotesize}
+
+\selectcolormodel{cmyk}
+
+\graphicspath{{images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Some math symbols used in the text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 
+\newcommand{\Matrix}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\Vector}[1]{\Matrix{#1}}
+\newcommand*{\SET}[1]  {\ensuremath{\mathcal{#1}}}
+\newcommand*{\MAT}[1]  {\ensuremath{\mathbf{#1}}}
+\newcommand*{\VEC}[1]  {\ensuremath{\bm{#1}}}
+\newcommand*{\CONST}[1]{\ensuremath{\mathit{#1}}}
+\newcommand*{\norm}[1]{\mathopen\| #1 \mathclose\|}% use instead of $\|x\|$
+\newcommand*{\abs}[1]{\mathopen| #1 \mathclose|}% use instead of $\|x\|$
+\newcommand*{\absLR}[1]{\left| #1 \right|}% use instead of $\|x\|$
+
+\def\norm#1{\mathopen\| #1 \mathclose\|}% use instead of $\|x\|$
+\newcommand{\normLR}[1]{\left\| #1 \right\|}% use instead of $\|x\|$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multicol Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\columnsep}{0.7em}
+\setlength{\columnseprule}{0mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save space in lists. Use this after the opening of the list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{1pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Here starts the poster
+%%%---------------------------------------------------------------------------
+%%% Format it to your taste with the options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\typeout{Poster Starts}
+\background{}
+\definecolor{silver}{cmyk}{0,0,0,0.3}
+\definecolor{yellow}{cmyk}{0,0,0.9,0.0}
+\definecolor{reddishyellow}{cmyk}{0,0.22,1.0,0.0}
+\definecolor{black}{cmyk}{0,0,0.0,1.0}
+\definecolor{darkYellow}{cmyk}{0,0,1.0,0.5}
+\definecolor{darkSilver}{cmyk}{0,0,0,0.1}
+
+\definecolor{lightyellow}{cmyk}{0,0,0.3,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lightestyellow}{cmyk}{0,0,0.05,0.0}
+
+\definecolor{lightblues}{rgb}{.867, .918, .965}
+\definecolor{mediumblues}{rgb}{.617, .789, .879}
+\definecolor{darkblues}{rgb}{.191, .508, .738}
+
+\begin{poster}{
+  % Show grid to help with alignment
+  grid=false,
+  % Column spacing
+  colspacing=1em,
+  % Color style
+  bgColorOne=white, %specified the background color of the entire chart
+  bgColorTwo=black, % not sure what this does
+  borderColor=darkblues, % border color of boxes on poster
+  headerColorOne=darkblues, % color of header
+  headerColorTwo=black, % not sure what this does
+  headerFontColor=white, % color of font
+  boxColorOne=white,
+  boxColorTwo=white,
+  % Format of textbox
+  textborder=roundedleft,
+  % Format of text header
+  eyecatcher=true,
+  headerborder=open,
+  headerheight=0.08\textheight,
+  headershape=roundedright,
+  headershade=plain,
+  headerfont=\large\textsc, %Sans Serif
+  boxshade=plain,
+%  background=shade-tb,
+  background=plain,
+  linewidth=2pt
+  }
+  % Eye Catcher
+  {\begin{minipage}{13em}
+    \includegraphics[width=1.3in]{Somalia_eyecatcher.jpg}
+  \end{minipage}} % No eye catcher for this poster. If an eye catcher is present, the title is centered between eye-catcher and logo.
+  % Title
+  {\sc %Sans Serif
+  %\bf% Serif
+  Friends With Benefits: Replicating and ``Terror Group Cooperation
+  and Duration''}
+  % Authors
+  {\sc %Sans Serif
+  % Serif
+  \vspace{.5em} Margaret J. Foster\hspace{3em}
+mjf34@duke.edu\hspace{3em}
+  Duke University
+  }
+  % University logo
+  {{\begin{minipage}{13em}
+    \hfill
+    \includegraphics[height=5.5em]{dukelogo_vert_pms287.eps}
+  \end{minipage}}
+  }
+
+  \tikzstyle{light shaded}=[top color=baposterBGtwo!30!white,bottom color=baposterBGone!30!white,shading=axis,shading angle=30]
+
+  % Width of left inset image
+     \newlength{\leftimgwidth}
+     \setlength{\leftimgwidth}{0.78em+8.0em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Now define the boxes that make up the poster
+%%%---------------------------------------------------------------------------
+%%% Each box has a name and can be placed absolutely or relatively.
+%%% The only inconvenience is that you can only specify a relative position 
+%%% towards an already declared box. So if you have a box attached to the 
+%%% bottom, one to the top and a third one which should be in between, you 
+%%% have to specify the top and bottom boxes before you specify the middle 
+%%% box.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %
+    % A coloured circle useful as a bullet with an adjustably strong filling
+    \newcommand{\colouredcircle}[1]{%
+      \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=baposterBGone!80!black!#1!white,line width=0.03em] (0,0) circle(0.18em);}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Summary}{name=abstract,column=0,row=0}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   {} Brian Phillips....
+ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Data and Research Design}{name=data,column=0,below=abstract}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    {} Data is measured according to group-year.... 
+  
+\begin{tabular}{@{}c@{ }c@{ }c@{ }c@{}@{ }@{ }c@{ }c@{ }c@{ }c@{ }}
+\includegraphics[height=.75\linewidth]{acrc_map.pdf}
+\end{tabular}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Support for Rebel Groups}{name=supp1,column=0,below=data, above = bottom}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{} Phillips' dependent variable is a binary indicator of whether or
+not a terror organization failed in a given year.
+\begin{tabular}{@{}c@{ }c@{ }c@{ }c@{}@{ }@{ }c@{ }c@{ }c@{ }c@{ }}
+\includegraphics[height=.75\linewidth]{prop_supp1_map.pdf}\\
+\includegraphics[width=.95\linewidth]{supp_time.pdf}\\
+\end{tabular} 
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Model Estimates}{name=coefplot,column=1,span=1,row=0}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centering
+\smaller{\textbf{Base Model}}\\
+    \includegraphics[width=.994\linewidth]{paperTableCoefPlot.pdf}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Cross-Validation of Estimates}{name=robustness,column=2,span=1,row=0,}{  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centering
+    \includegraphics[width=.9887771604\linewidth]{UrguzModelCoefPlot.pdf}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Measures of Model Fit}{name=modelfit,column=1,span=1,below=coefplot,}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centering
+\smaller{\textbf{Separation Plot}}\\
+   \includegraphics[width=1\linewidth]{BaseModelSeparationPlot.pdf}
+\smaller{\textbf{ROC Plot}}\\
+\includegraphics[width=1\linewidth]{Foster_rocplot.pdf}\\
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Cross-Validation of Model Fit}{name=crossvals,column=2,span=1,below=robustness,}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centering
+\includegraphics[width=1\linewidth]{Foster_rocplot.pdf}
+
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Substantive Effects with Uncertainty (95\% CI shaded)}{name=results,column=1,span=2,below=modelfit,above=bottom}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centering
+\begin{tabular}{@{}c@{ }c@{ }c@{ }c@{}@{ }@{ }c@{ }c@{ }c@{ }c@{ }}
+    \includegraphics[width=.5\linewidth]{PlaceholderPredictedProbs.pdf}&
+\includegraphics[width=.5\linewidth]{PlaceholderPredictedProbs.pdf}
+\end{tabular}
+
+  }%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Extension: Who You Know}{name=outofsample,column=3,span=1,row=0}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here we divide our dataset into a Cold War period training set and Post-Cold War period test set, to assess the predictive power of SGC's model in recent years.
+\begin{center}
+\small{\textbf{Network and Community Structure, 1987-1989 Data}}
+\includegraphics[width=1\linewidth]{80sConnections.png}\\
+\small{\textbf{Network and Community Structure, 1997-2005 Data}}
+\includegraphics[width=1\linewidth]{nintiesNetworkFinal.png}\\
+\small{\textbf{ROC Plot: In \& Out-of-Sample Comparison}}
+\includegraphics[width=1\linewidth]{ROC_model4_cold_postcold.pdf}
+\end{center}
+  }%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Post-Cold War Conflicts}{name=postcoldmaps,column=3,span=1,above=bottom,below=outofsample}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Below we show the spatial distribution of rebel conflicts in the Post-Cold War world.
+\begin{center}
+\begin{tabular}{@{}c@{ }c@{ }c@{ }c@{}@{ }@{ }c@{ }c@{ }c@{ }c@{ }}
+\includegraphics[height=.75\linewidth]{acrc_map_postcoldwar.pdf}\\
+\includegraphics[height=.75\linewidth]{prop_supp1_map_postcoldwar.pdf}
+\end{tabular}
+\end{center}
+  }%
+
+\end{poster}%
+%
+\end{document}
